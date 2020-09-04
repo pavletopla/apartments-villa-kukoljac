@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano version="1.19-pr16">
+
+    
+  <!-- Spot Style - Load panorama -->
+
+
+  <style name="IconLoadpanorama"
+         url="%FIRSTXML%/spots/hotspot_image_sequence_user_defaultpoint5.png"
+         visible="false"
+         frame="0"
+         lastframe="22"
+         framewidth="50"
+         frameheight="50"
+         stopspotsequence="false"
+         crop="0|0|50|50"
+         edge="center"
+         alpha="0.8"
+         onloaded="startspotanimation(0.1);"
+         onhover="onhoverIconLoadpanorama"
+         onover="onoverIconLoadpanorama"
+         onout="onoutIconLoadpanorama"
+
+         height="70"
+         width="45"
+         />
+  <action name="onhoverIconLoadpanorama">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIconLoadpanorama">
+
+tween(alpha, 1);
+pauseautorotation(forcehotspot);
+
+  </action>
+  <action name="onoutIconLoadpanorama">
+    hideTooltip();
+
+    tween(alpha, 0.8);
+resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+  <!-- unsupported kind of display : PointMap -->
+
+
+    
+  <!-- Spot Style - URL Load panorama -->
+
+
+  <style name="IconURLLoadpanorama"
+         url="%FIRSTXML%/spots/hotspot_image_sequence_user_defaultpoint7.png"
+         visible="false"
+         frame="0"
+         lastframe="22"
+         framewidth="50"
+         frameheight="50"
+         stopspotsequence="false"
+         crop="0|0|50|50"
+         edge="center"
+         alpha="0.8"
+         onloaded="startspotanimation(0.1);"
+         onhover="onhoverIconURLLoadpanorama"
+         onover="onoverIconURLLoadpanorama"
+         onout="onoutIconURLLoadpanorama"
+
+         height="70"
+         width="45"
+         />
+  <action name="onhoverIconURLLoadpanorama">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIconURLLoadpanorama">
+
+tween(alpha, 1);
+pauseautorotation(forcehotspot);
+
+  </action>
+  <action name="onoutIconURLLoadpanorama">
+    hideTooltip();
+
+    tween(alpha, 0.8);
+resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+    
+  <!-- Spot Style - URL panorama Attraction -->
+
+
+  <style name="IconURLpanoramaAttraction"
+         url="%FIRSTXML%/spots/location_user_defaultpoint8.png"
+         visible="false"
+         edge="center"
+         onhover="onhoverIconURLpanoramaAttraction"
+         onout="onoutIconURLpanoramaAttraction"
+
+         height="70"
+         width="45"
+         />
+  <action name="onhoverIconURLpanoramaAttraction">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoutIconURLpanoramaAttraction">
+    hideTooltip();
+
+
+
+  </action>
+
+
+
+<!-- ********** -->
+<!-- TripAdvisor -->
+<!-- id : logo13 -->
+<!-- ********** -->
+
+
+
+
+
+<!-- ********** -->
+<!-- Google+ -->
+<!-- id : logo12 -->
+<!-- ********** -->
+
+
+
+
+
+<!-- ********** -->
+<!-- VK -->
+<!-- id : logo10 -->
+<!-- ********** -->
+
+
+
+
+
+<!-- ********** -->
+<!-- LinkedIn -->
+<!-- id : logo11 -->
+<!-- ********** -->
+
+
+
+
+
+<!-- ********** -->
+<!-- Youtube -->
+<!-- id : logo9 -->
+<!-- ********** -->
+
+
+
+
+
+<!-- ********** -->
+<!-- Twitter -->
+<!-- id : logo5 -->
+<!-- ********** -->
+
+
+
+
+
+<!-- ********** -->
+<!-- Instagram -->
+<!-- id : logo6 -->
+<!-- ********** -->
+
+
+
+
+
+<!-- ********** -->
+<!-- Facebook -->
+<!-- id : logo3 -->
+<!-- ********** -->
+
+
+
+
+
+<!-- ********** -->
+<!-- Website / Location -->
+<!-- id : logo4 -->
+<!-- ********** -->
+
+
+
+
+
+  <!-- Fullscreen Management -->
+  <action name="exitFullScreen" devices="fullscreensupport">set(tour_fullscreen,false);set(fullscreen,false);</action>
+  <action name="enterFullScreen" devices="fullscreensupport">set(tour_fullscreen,true);set(fullscreen,true);</action>
+  <action name="switchFullScreen">if(tour_fullscreen,exitFullScreen();,enterFullScreen(););</action>
+
+  
+  <events name="krpanoExitFullscreenEvent"
+    onexitfullscreen="if(tour_fullscreen,exitFullScreenChangeEvent(););"
+    keep="true" />
+
+  <action name="exitFullScreenChangeEvent" devices="fullscreensupport">set(tour_fullscreen,false);events.dispatch(onexitfullscreen);</action>
+
+</krpano>
